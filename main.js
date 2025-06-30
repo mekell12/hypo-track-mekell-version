@@ -1,12 +1,12 @@
 var HypoTrack = (function () {
-    const TITLE = 'HypoTrack';
-    const VERSION = '0.2.2';
-    const IDB_KEY = 'hypo-track';
+    const TITLE = 'HypoTrack Mekell Version';
+    const VERSION = '20250630a';
+    const IDB_KEY = 'hypo-track-mekell';
 
     const WIDTH = 1000;
     const HEIGHT = 500;
-    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#c0c0c0'];
-    const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#c0c0c0'];
+    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#a4baff', '#c6f3ff', '#d1ffe0', '#fcffeb', '#ffffff', '#c0c0c0'];
+    const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#aa80ff', '#80b0ff', '#cce0ff', '#ddffff', '#ffffff', '#c0c0c0'];
 
     let loadedMapImg,
         mapImgs,
@@ -775,7 +775,12 @@ var HypoTrack = (function () {
             'Category 3': 4,
             'Category 4': 5,
             'Category 5': 6,
-            'Unknown': 7
+            'Category 6': 7,
+            'Category 7': 8,
+            'Category 8': 9,
+            'Category 9': 10,
+            'Category 10': 11,
+            'Unknown': 12
         };
 
         let typeSelectData = {
