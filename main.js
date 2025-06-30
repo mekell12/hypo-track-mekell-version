@@ -143,6 +143,8 @@ var HypoTrack = (function () {
                             stroke('#ffff00');
                         else if (hoverTrack === tracks[i])
                             stroke('#ffffff');
+                        else if (d.cat == 11)
+                            stroke('#00ffff');
                         else
                             noStroke();
                         function mark(x) {
