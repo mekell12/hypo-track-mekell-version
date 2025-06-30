@@ -5,8 +5,8 @@ var HypoTrack = (function () {
 
     const WIDTH = 1000;
     const HEIGHT = 500;
-    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#a4baff', '#c6f3ff', '#d1ffe0', '#808040', '#000000', '#c0c0c0'];
-    const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#aa80ff', '#80b0ff', '#cce0ff', '#808060', '#000000', '#c0c0c0'];
+    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#a4baff', '#c6f3ff', '#d1ffe0', '#808060', '#000000', '#c0c0c0'];
+    const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#aa80ff', '#80b0ff', '#cce0ff', '#808040', '#000000', '#c0c0c0'];
 
     let loadedMapImg,
         mapImgs,
@@ -937,7 +937,7 @@ var HypoTrack = (function () {
             return;
 
         const k = key.toLowerCase();
-        const categoryKeys = ['d', 's', '1', '2', '3', '4', '5', 'u'];
+        const categoryKeys = ['d', 's', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'u'];
         const typeKeys = ['t', 'b', 'x'];
 
         if(categoryKeys.includes(k))
