@@ -62,6 +62,7 @@ var HypoTrack = (function () {
         typeToPlace = 0;
         useAltColors = false;
         useSmallDots = false;
+        coordsRounded = true;
         autosave = true;
         saveLoadReady = true;
 
@@ -658,7 +659,7 @@ var HypoTrack = (function () {
         if (long instanceof TrackPoint)
             ({ long, lat } = long);
         if (coordsRounded)
-            ({ long, lat } = { Math.round(long * 10) / 10, Math.round(lat * 10) / 10 });
+            ({ long, lat } = { Math:round(long * 10) / 10, Math:round(lat * 10) / 10 });
         let x = ((long - panLocation.long + 360) % 360) / mapViewWidth() * WIDTH;
         let y = (panLocation.lat - lat) / mapViewHeight() * WIDTH / 2 + HEIGHT - WIDTH / 2;
         let inBounds = x >= 0 && x < WIDTH && y >= (HEIGHT - WIDTH / 2) && y < HEIGHT;
