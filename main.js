@@ -182,7 +182,7 @@ var HypoTrack = (function () {
                         stroke(0);
                         strokeWeight(4);
                         textAlign(LEFT);
-                        text("Track " + i, mouseX + 10, mouseY - 10)
+                        text("Track " + (i + 1), mouseX + 10, mouseY - 10)
                     }
                 }
             }
