@@ -1,6 +1,6 @@
 var HypoTrack = (function () {
     const TITLE = 'HypoTrack Mekell Version';
-    const VERSION = '20250630b';
+    const VERSION = '20250630c';
     const IDB_KEY = 'hypo-track-mekell';
 
     const WIDTH = 1000;
@@ -173,7 +173,7 @@ var HypoTrack = (function () {
                         mark(coords.x + worldWidth);
                     }
                     if (hoverTrack === tracks[i]) {
-                        textSize(50);
+                        textSize(24);
                         fill(255);
                         stroke(0);
                         strokeWeight(10);
