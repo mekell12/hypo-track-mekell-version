@@ -1,6 +1,6 @@
 var HypoTrack = (function () {
     const TITLE = 'HypoTrack Mekell Version';
-    const VERSION = '20250630c';
+    const VERSION = '20250701a';
     const IDB_KEY = 'hypo-track-mekell';
 
     const WIDTH = 1000;
