@@ -5,7 +5,7 @@ var HypoTrack = (function () {
 
     const WIDTH = 1000;
     const HEIGHT = 500;
-    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#a4baff', '#c6f3ff', '#d1ffe0', '#808060', '#000000', '#c0c0c0'];
+    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#c4daff', '#c6f3ff', '#d1ffe0', '#808060', '#000000', '#c0c0c0'];
     const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#aa80ff', '#80b0ff', '#cce0ff', '#808040', '#000000', '#c0c0c0'];
 
     let loadedMapImg,
@@ -35,8 +35,6 @@ var HypoTrack = (function () {
         saveName,
         autosave,
         saveLoadRead;
-        //names,
-        //stormName;
 
     let refreshGUI; // hoist function
 
@@ -173,6 +171,13 @@ var HypoTrack = (function () {
                         mark(coords.x);
                         mark(coords.x - worldWidth);
                         mark(coords.x + worldWidth);
+                    }
+                    if (hoverTrack === tracks[i]) {
+                        textSize(50);
+                        fill(255);
+                        stroke(0);
+                        strokeWeight(10);
+                        text("Track " + i, mouseX + 10, mouseY - 10)
                     }
                 }
             }
@@ -924,13 +929,6 @@ var HypoTrack = (function () {
             refreshGUI();
         };
 
-        // Season Tracking UI //
-
-        //let seasontrackui = div(uicontainer);
-
-        //let stormDropdown = dropdown('storm-track-dropdown', 'Select Storm', {}, seasontrackui);
-        //let stormRenameTextbox = dropdown('rename-storm-textbox', 'Rename Storm:', seasontrackui);
-
         refreshGUI = function () {
             undoButton.disabled = !History.canUndo();
             redoButton.disabled = !History.canRedo();
@@ -955,13 +953,8 @@ var HypoTrack = (function () {
                 saveNameTextbox.value = saveName;
             else
                 saveNameTextbox.value = '';
-            //if (stormName)
-                //stormRenameTextbox.value = stormName;
-            //else
-                //stormRenameTextbox.value = '';
             refreshLoadDropdown();
-            //refreshStormDropdown();
-            console.log("DEBUG", tracks)
+            console.log("DEBUG: TRACKS", tracks)
         };
 
         refreshGUI();
