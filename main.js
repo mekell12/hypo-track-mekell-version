@@ -1,6 +1,6 @@
 var HypoTrack = (function () {
     const TITLE = 'HypoTrack Mekell Version';
-    const VERSION = '20250630a';
+    const VERSION = '20250630b';
     const IDB_KEY = 'hypo-track-mekell';
 
     const WIDTH = 1000;
@@ -31,6 +31,7 @@ var HypoTrack = (function () {
         deleteTrackPoints,
         useAltColors,
         useSmallDots,
+        coordsRounded,
         saveName,
         autosave,
         saveLoadRead;
@@ -656,6 +657,8 @@ var HypoTrack = (function () {
     function longLatToScreenCoords(long, lat) {
         if (long instanceof TrackPoint)
             ({ long, lat } = long);
+        if (coordsRounded)
+            ({ long, lat } = { Math.round(long * 10) / 10, Math.round(lat * 10) / 10 });
         let x = ((long - panLocation.long + 360) % 360) / mapViewWidth() * WIDTH;
         let y = (panLocation.lat - lat) / mapViewHeight() * WIDTH / 2 + HEIGHT - WIDTH / 2;
         let inBounds = x >= 0 && x < WIDTH && y >= (HEIGHT - WIDTH / 2) && y < HEIGHT;
@@ -855,6 +858,11 @@ var HypoTrack = (function () {
         smallDotCheckbox.onclick = function () {
             useSmallDots = smallDotCheckbox.checked;
         };
+        
+        let coordsRoundedCheckbox = checkbox('rounded-coords-checkbox', 'Round Points to Nearest Tenth of a Degree (Best Track)', buttons);
+        coordsRoundedCheckbox.onclick = function () {
+            coordsRounded = coordsRoundedCheckbox.checked;
+        };
 
         let autosaveCheckbox = checkbox('autosave-checkbox', 'Autosave', buttons);
         autosaveCheckbox.onclick = function () {
@@ -931,6 +939,7 @@ var HypoTrack = (function () {
             modifyTrackPointButton.disabled = !selectedDot || !saveLoadReady;
             altColorCheckbox.checked = useAltColors;
             smallDotCheckbox.checked = useSmallDots;
+            coordsRoundedCheckbox.checked = coordsRounded;
             autosaveCheckbox.checked = autosave;
             saveButton.disabled = loadDropdown.disabled = newSeasonButton.disabled = !saveLoadReady;
             if (saveName)
