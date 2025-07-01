@@ -5,7 +5,7 @@ var HypoTrack = (function () {
 
     const WIDTH = 1000;
     const HEIGHT = 500;
-    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#c4daff', '#c6f3ff', '#d1ffe0', '#808060', '#000000', '#c0c0c0'];
+    const COLORS_ALT = ['#6ec1ea', '#4dffff', '#ffffd9', '#ffd98c', '#ff9e59', '#ff738a', '#a188fc', '#c4daff', '#d6f3ff', '#b1ffd0', '#808060', '#000000', '#c0c0c0'];
     const COLORS = ['#5ebaff', '#00faf4', '#ffffcc', '#ffe775', '#ffc140', '#ff8f20', '#ff6060', '#aa80ff', '#80b0ff', '#cce0ff', '#808040', '#000000', '#c0c0c0'];
 
     let loadedMapImg,
@@ -58,7 +58,7 @@ var HypoTrack = (function () {
         tracks = [];
         categoryToPlace = 0;
         typeToPlace = 0;
-        useAltColors = false;
+        useAltColors = true;
         useSmallDots = false;
         coordsRounded = true;
         autosave = true;
@@ -868,7 +868,7 @@ var HypoTrack = (function () {
             deleteTrackPoints = deletePointsCheckbox.checked;
         }
 
-        let altColorCheckbox = checkbox('alt-color-checkbox', 'Use Accessible Colors', buttons);
+        let altColorCheckbox = checkbox('alt-color-checkbox', 'Use Alternative Colors', buttons);
         altColorCheckbox.onclick = function () {
             useAltColors = altColorCheckbox.checked;
         };
