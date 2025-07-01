@@ -1,5 +1,8 @@
 About: Fan-made updates to a browser-based tool for creating hypothetical tropical cyclone tracks
 
+v20250701a: (2025-07-01):
+    * Renamed accessible colors to alternative colors
+    * Changed colors for categories 7 through 9 in the alternative color scheme
 v20250630c: (2025-06-30):
     + Hovering the mouse over a track tells you which track # you're hovering over
     * Changed the category 6 point color for accessible colors mode because it looked too similar to the depression color
