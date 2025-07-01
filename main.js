@@ -175,8 +175,6 @@ var HypoTrack = (function () {
                     if (hoverTrack === tracks[i]) {
                         textSize(24);
                         fill(255);
-                        stroke(0);
-                        strokeWeight(10);
                         text("Track " + i, mouseX + 10, mouseY - 10)
                     }
                 }
