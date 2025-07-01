@@ -1,5 +1,9 @@
 About: Fan-made updates to a browser-based tool for creating hypothetical tropical cyclone tracks
 
+v20250630c: (2025-06-30):
+    + Hovering the mouse over a track tells you which track # you're hovering over
+    * Changed the category 6 point color for accessible colors mode because it looked too similar to the depression color
+    - Removed plans for a storm naming/tracking menu that were within the code
 v20250630b: (2025-06-30):
     + Best track mode (rounds points to the nearest tenth of a degree, similarly to positions in best track databases)
 v20250630a: (2025-06-30):
