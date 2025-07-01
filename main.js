@@ -103,9 +103,10 @@ var HypoTrack = (function () {
             drawMap();
             let dotSize = 2 * pow(1.25, zoomAmt);
             strokeWeight(dotSize / 9);
-            if(useSmallDots)
+            if(useSmallDots) {
                 dotSize *= 9/15;
-                strokeWeight(dotSize / 9 / 15);
+                strokeWeight(dotSize / 15);
+            }
             for (let i = 0; i < tracks.length; i++) {
                 if (!hideNonSelectedTracks || selectedTrack === tracks[i]) {
                     for (let j = 0; j < tracks[i].length; j++) {
