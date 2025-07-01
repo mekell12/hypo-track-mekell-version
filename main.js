@@ -172,9 +172,15 @@ var HypoTrack = (function () {
                         mark(coords.x - worldWidth);
                         mark(coords.x + worldWidth);
                     }
+                }
+            }
+            for (let i = 0; i < tracks.length; i++) {
+                if (!hideNonSelectedTracks || selectedTrack === tracks[i]) {
                     if (hoverTrack === tracks[i]) {
                         textSize(24);
                         fill(255);
+                        stroke(0);
+                        strokeWeight(4);
                         text("Track " + i, mouseX + 10, mouseY - 10)
                     }
                 }
