@@ -656,12 +656,20 @@ var HypoTrack = (function () {
     }
 
     function longLatToScreenCoords(long, lat) {
-        if (long instanceof TrackPoint)
-            ({ long, lat } = long);
-        if (coordsRounded)
-            ({ long, lat } = { Math:round(long * 10) / 10, Math:round(lat * 10) / 10 });
-        let x = ((long - panLocation.long + 360) % 360) / mapViewWidth() * WIDTH;
-        let y = (panLocation.lat - lat) / mapViewHeight() * WIDTH / 2 + HEIGHT - WIDTH / 2;
+        let funcLong, funcLat
+        if (long instanceof TrackPoint) {
+            funcLong = long.long || 0;
+            funcLat = long.lat || 0;
+        } else {
+            funcLong = long || 0;
+            funcLat = lat || 0;
+        }
+        if (coordsRounded) {
+            funcLong = Math:round(funcLong * 10) / 10
+            funcLat = Math:round(funcLat * 10) / 10
+        };
+        let x = ((funcLong - panLocation.long + 360) % 360) / mapViewWidth() * WIDTH;
+        let y = (panLocation.lat - funcLat) / mapViewHeight() * WIDTH / 2 + HEIGHT - WIDTH / 2;
         let inBounds = x >= 0 && x < WIDTH && y >= (HEIGHT - WIDTH / 2) && y < HEIGHT;
         return { x, y, inBounds };
     }
