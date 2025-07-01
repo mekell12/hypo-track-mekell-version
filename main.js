@@ -33,7 +33,9 @@ var HypoTrack = (function () {
         useSmallDots,
         saveName,
         autosave,
-        saveLoadReady;
+        saveLoadReady,
+        //names,
+        //stormName;
 
     let refreshGUI; // hoist function
 
@@ -103,6 +105,7 @@ var HypoTrack = (function () {
             strokeWeight(dotSize / 9);
             if(useSmallDots)
                 dotSize *= 9/15;
+                strokeWeight(dotSize / 9 / 15);
             for (let i = 0; i < tracks.length; i++) {
                 if (!hideNonSelectedTracks || selectedTrack === tracks[i]) {
                     for (let j = 0; j < tracks[i].length; j++) {
@@ -882,7 +885,7 @@ var HypoTrack = (function () {
                 Database.save();
                 refreshGUI();
             } else
-                alert('Save names must be at least 4 characters long and only contain letters, numbers, spaces, underscores, or hyphens');
+                alert('Save names must be 4-32 characters long and only contain letters, digits, spaces, underscores, or hyphens');
         };
 
         loadDropdown.onchange = function () {
@@ -902,6 +905,13 @@ var HypoTrack = (function () {
             History.reset();
             refreshGUI();
         };
+
+        // Season Tracking UI //
+
+        //let seasontrackui = div(uicontainer);
+
+        //let stormDropdown = dropdown('storm-track-dropdown', 'Select Storm', {}, seasontrackui);
+        //let stormRenameTextbox = dropdown('rename-storm-textbox', 'Rename Storm:', seasontrackui);
 
         refreshGUI = function () {
             undoButton.disabled = !History.canUndo();
@@ -926,7 +936,13 @@ var HypoTrack = (function () {
                 saveNameTextbox.value = saveName;
             else
                 saveNameTextbox.value = '';
+            //if (stormName)
+                //stormRenameTextbox.value = stormName;
+            //else
+                //stormRenameTextbox.value = '';
             refreshLoadDropdown();
+            //refreshStormDropdown();
+            console.log("DEBUG", tracks)
         };
 
         refreshGUI();
