@@ -2,3 +2,4 @@ About: A browser-based tool for creating hypothetical tropical cyclone tracks
 
 v20250630a: (2025-06-30):
     + After forking this project, added unofficial hurricane categories 6 through 10
+    + Stroke weight is now thinner in small point mode
