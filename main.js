@@ -33,7 +33,7 @@ var HypoTrack = (function () {
         useSmallDots,
         saveName,
         autosave,
-        saveLoadReady,
+        saveLoadRead;
         //names,
         //stormName;
 
