@@ -181,6 +181,7 @@ var HypoTrack = (function () {
                         fill(255);
                         stroke(0);
                         strokeWeight(4);
+                        textAlign(LEFT);
                         text("Track " + i, mouseX + 10, mouseY - 10)
                     }
                 }
