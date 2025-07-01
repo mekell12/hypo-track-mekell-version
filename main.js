@@ -665,8 +665,8 @@ var HypoTrack = (function () {
             funcLat = lat || 0;
         }
         if (coordsRounded) {
-            funcLong = Math:round(funcLong * 10) / 10
-            funcLat = Math:round(funcLat * 10) / 10
+            funcLong = Math.round(funcLong * 10) / 10
+            funcLat = Math.round(funcLat * 10) / 10
         };
         let x = ((funcLong - panLocation.long + 360) % 360) / mapViewWidth() * WIDTH;
         let y = (panLocation.lat - funcLat) / mapViewHeight() * WIDTH / 2 + HEIGHT - WIDTH / 2;
