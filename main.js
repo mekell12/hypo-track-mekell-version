@@ -860,9 +860,7 @@ var HypoTrack = (function () {
         let selectTrackDropdown = dropdown('select-track-dropdown', 'Select Track:', {}, buttons)
         async function refreshTrackDropdown() {
             selectTrackDropdown.replaceChildren();
-            let i = 0;
-            for (let item of tracks)
-                i++;
+            for (let i = 1; i <= tracks.length; i++)
                 dropdownOption(i, selectTrackDropdown);
             selectTrackDropdown.value = '';
         }
