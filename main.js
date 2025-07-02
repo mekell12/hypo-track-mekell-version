@@ -863,13 +863,12 @@ var HypoTrack = (function () {
             let i = 0;
             for (let item of tracks)
                 i++;
-                let option = dropdownOption(item, selectTrackDropdown);
-                option.innerText = "Track " + i
+                dropdownOption(i, selectTrackDropdown);
             selectTrackDropdown.value = '';
         }
         selectTrackDropdown.onchange = function () {
             if (selectTrackDropdown.value) {
-                selectedTrack = selectTrackDropdown.value;
+                selectedTrack = tracks[selectTrackDropdown.value - 1];
                 selectedDot = selectedTrack[selectedTrack.length - 1]
                 refreshGUI();
             }
