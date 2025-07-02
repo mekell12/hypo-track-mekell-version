@@ -1,6 +1,6 @@
 var HypoTrack = (function () {
     const TITLE = 'HypoTrack Mekell Version';
-    const VERSION = '20250701a';
+    const VERSION = '20250701b';
     const IDB_KEY = 'hypo-track-mekell';
 
     const WIDTH = 1000;
@@ -857,6 +857,23 @@ var HypoTrack = (function () {
             }
         };
 
+        let selectTrackDropdown = dropdown('select-track-dropdown', 'Select Track:', {}, buttons)
+        async function refreshTrackDropdown() {
+            selectTrackDropdown.replaceChildren();
+            let i = 0;
+            for (let item of tracks)
+                dropdownOption(item, selectTrackDropdown);
+                i++;
+            selectTrackDropdown.value = '';
+        }
+        selectTrackDropdown.onchange = function () {
+            if (selectTrackDropdown.value) {
+                selectedTrack = selectTrackDropdown.value;
+                selectedDot = selectedTrack[selectedTrack.length - 1]
+                refreshGUI();
+            }
+        };
+
         let singleTrackCheckbox = checkbox('single-track-checkbox', 'Single Track Mode', buttons);
         singleTrackCheckbox.onclick = function () {
             if (selectedTrack)
@@ -959,6 +976,7 @@ var HypoTrack = (function () {
             else
                 saveNameTextbox.value = '';
             refreshLoadDropdown();
+            refreshTrackDropdown();
             console.log("DEBUG: TRACKS", tracks)
         };
 
