@@ -862,8 +862,9 @@ var HypoTrack = (function () {
             selectTrackDropdown.replaceChildren();
             let i = 0;
             for (let item of tracks)
-                dropdownOption(item, selectTrackDropdown);
                 i++;
+                let option = dropdownOption(item, selectTrackDropdown);
+                option.innerText = "Track " + i
             selectTrackDropdown.value = '';
         }
         selectTrackDropdown.onchange = function () {
